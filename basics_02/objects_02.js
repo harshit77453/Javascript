@@ -61,17 +61,25 @@ const course = {
 
 // course.courseInstructor
 
-const {courseInstructor: instructor} = course
 
+// Object de-structuring 
+const {courseInstructor} = course
 // console.log(courseInstructor);
+
+// we can also assign name 
+const {courseInstructor: instructor} = course
 console.log(instructor);
 
+// API comes mostly in the JSON, early(phle ke time me) API comes in XML format which were very complex.
+// Json format , object without name and keys are in sttrings.
 // {
 //     "name": "hitesh",
 //     "coursename": "js in hindi",
 //     "price": "free"
 // }
 
+
+// API sometimes comes in the form of array
 [
   {},
   {},
