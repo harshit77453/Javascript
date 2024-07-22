@@ -29,9 +29,48 @@ console.log(y) // 100 (y is the global scope variable)
 const z = 100
 if (true){
     const z = 200 
-    console.log("y inside Block",y) // 100
+    console.log("z inside Block",y) // 100
 }
 console.log(z) // 100
 
+// 
+
+function one(){
+    const username = "Harshit"
+    function two(){
+        const website = "xyz.com"
+        console.log(username)  // Harshit     ,outside function variable vallue can be access inside function.
+    }
+    //console.log(website)  // ReferenceError: website is not defined i.e - outside function cant'nt access inside function value.
+    two()
+}
+one()
 
 
+
+
+if(true){
+    const username = "Harshit"
+    if(username === "Harshit"){
+        const website = "Youtube"
+        console.log(username + website)
+    }
+    //console.log(website) - provide error: website is not defined
+}
+// console.log(username) - provide error: website is not defined
+
+
+
+ // ******* Interesting Concept *********
+
+console.log(addone(5))  // provide output-6 ,access before function initialization.
+function addone(num){  // Known as function
+    return num+1
+}
+ 
+
+//console.log(addtwo(5))  // Give error - when we store function into a variable, we can'nt access before function initialization
+const addtwo = function(num){  // known as function or expression as funtion is assign to a variable.
+    return num + 2
+}
+console.log(addtwo(5))  // 7
