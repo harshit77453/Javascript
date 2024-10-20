@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Series</title>
+</head>
+<body style="background-color: black;color: white">
+    
+</body>
+<script>
+    const div = document.createElement('div');
+    console.log(div);
+    div.className = "main" 
+    div.id = Math.round(Math.random() * 10 + 1)
+    div.setAttribute('title', 'generated title')
+    div.style.backgroundColor = "green"
+    div.style.padding = '12px'
+    div.innerText = 'chai aur code'  // this method override the text
+    // Another way to add text 
+    // const addText = document.createTextNode("Chai aur code") This method can't override the text 
+    // div.appendChild(addText)
+    
+    document.appendChild(div)
+</script>
+</html>
