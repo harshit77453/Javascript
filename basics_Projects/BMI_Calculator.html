@@ -30,22 +30,35 @@
 </body>
 <script>
     const form = document.querySelector('form');
+    // this usecase will give you empty
+    // const height = parseInt(document.querySelector('#height').value)
 
-    form.addEventListener('submit',function(e){
-        e.preventDefault()
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
         const height = parseInt(document.querySelector('#height').value);
         const weight = parseInt(document.querySelector('#weight').value);
         const results = document.querySelector('#results');
+        const resguide = document.querySelector('#guide-result');
 
-        if(height < 0 || isNaN(height) || height === ''){
-            results.innerHTML = "Please enter a valid ${height}";
-        }else if(weight < 0 || isNaN(weight) || weight === ''){
-            results.innerHTML = "Please enter a valid ${weight}";
-        }else{
-            const bmi = (weight/((height*height)/1000)).toFixed(2);
-            // show the result
-            result.innerHTML = `<span>${bmi}</span>`
+        if (height === '' || height < 0 || isNaN(height)) {
+          results.innerHTML = `Please give a valid height ${height}`;
+        } else if (weight === '' || weight < 0 || isNaN(weight)) {
+          results.innerHTML = `Please give a valid weight ${weight}`;
+        } else {
+          const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+          //show the result
+          results.innerHTML = `<span>${bmi}</span>`;
+          if (bmi >= 25){
+            resguide.innerHTML = `Your BMI is OVerweight ${bmi}, Please work to Reduce`;
+          }else if(bmi <= 18.5){
+            resguide.innerHTML = `Your BMI is Under weight ${bmi}, Please work to Maintain`;
+          }else{
+            resguide.innerHTML = `Your BMI is Normal ${bmi}, Hurrray!!!`;
+          }
         }
-    })
+    });
+
+
 </script>
 </html>
