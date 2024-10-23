@@ -5,6 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Background Color Switcher</title>
 </head>
+<style>
+  html{
+      margin:0;
+  }
+  span{
+      display:block        
+  }
+  .canvas {
+      margin: 100px auto 100px;
+      width: 80%;
+      text-align: center;
+  }
+  .button{
+      width: 100px;
+      height: 100px;
+      border: solid black 2px;
+      display: inline-block;
+  }
+  #grey{
+      background: grey;
+  }
+  #white{
+      background: white;
+  }
+  #blue{
+      background: blue;
+  }
+  #Yellow{
+      background: yellow;
+  }
+</style>
 <body>
     <nav>
         <a href=""/ aria-current="page">Home</a>
@@ -23,6 +54,29 @@
     </div>
 </body>
 <script>
+    console.log("hitesh")
+const buttons = document.querySelectorAll('.button');
+const body = document.querySelector('body');
+
+buttons.forEach(function (button) {
+  console.log(button);
+  button.addEventListener('click', function (e) {
+    console.log(e);
+    console.log(e.target);
+    if (e.target.id === 'grey') {
+      body.style.backgroundColor = e.target.id;
+    }
+    if (e.target.id === 'White') {
+      body.style.backgroundColor = e.target.id;
+    }
+    if (e.target.id === 'blue') {
+      body.style.backgroundColor = e.target.id;
+    }
+    if (e.target.id === 'Yellow') {
+      body.style.backgroundColor = e.target.id;
+    }
     
+  });
+});
 </script>
 </html>
