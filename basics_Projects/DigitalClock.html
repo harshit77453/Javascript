@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+<body>
+    <nav>
+        <a link="/" aria-current="page">Home</a>
+        <a target="_blank" href="https://www.youtube.com/">Youtube</a>
+    </nav>
+    <div class = "center">
+        <div id="banner"><label>Your Local time</label></div>
+        <div id="clock"></div>
+    </div>
+</body>
+<script>
+    const clock = document.getElementById('clock');
+    
+    setInterval(function(){
+        let date = new Date();
+        clock.innerHTML = date.toLocaleTimeString();
+    },1000)
+</script>
+</html>
+
+# setInterval(function(){},1000) - it is an method that take another function 
+# as argument and run argumented method continually.
+# The setInterval() method continues calling the function until 
+# clearInterval() is called, or the window is closed.
+# 1 second = 1000 milliseconds. , 1000 is pass as one of argumented for 1 second.
+#  2 second = 2000 milliseconds.
