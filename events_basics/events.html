@@ -6,6 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <ul class="images">
+        <li><img src="" alt=""></li>
+        <li><img src="" alt=""></li>
+        <li><img src="" alt=""></li>
+        <li><img src="" alt=""></li>
+        <li><a href="">Google Chrome</a></li>
+    </ul>
 </body>
+<script>
+    //document.getElementById('owl').onclick = function(){
+    //    alert('owl clicked')
+    //}
+    // 2nd and most useable method to trigger event
+    document.getElementById('owl').addEventListener('click',function(){
+        alert("clciked owl")
+    },false)
+    // by default false, 3rd parameter of addeventListner() method.
+</script>
 </html>
+
+// Note - Events in javascript run in sequential way except some some Events.
+// Javascript is an Sequential Language
